@@ -238,7 +238,7 @@
 							<div class="news_box">
 								<ul class="news_all_list">
 									<c:forEach items="${requestScope.infoList}" var="info">
-										<li><a href="javascript:void(0);"> <i class="square"></i>
+										<li><a href="infofindbyid.do?id=${info.infoId }"> <i class="square"></i>
 												${info.infoTitle}
 										</a></li>
 									</c:forEach>

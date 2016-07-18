@@ -1,5 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%
 	String path = request.getContextPath();
 	String basePath = request.getScheme() + "://"
@@ -47,16 +48,18 @@
 				<div class="cont-left">
 					<div class="article-box">
 						<div class="article-box-tit">
-							<h4>投资中国未来 服务高校双创——全国高校创新创业投资服务联盟顺利成立</h4>
-							<span>发布时间：<em> 2016年03月14日 </em></span>
+							<h4>${requestScope.info.infoTitle }</h4>
+							<span>发布时间：<em> ${requestScope.info.infoTime } </em></span>
 						</div>
 						<div class="article-box-head">
 							<p style="text-align: center">
-								<img alt="" zcmsimagerela="292396"
-									style="width: 137px; height: 171px"
-									src="images/1_2923964255.jpg" border="0">
+								<c:if test="${not empty requestScope.info.infoImg}">
+									<img alt="" zcmsimagerela="292396"
+										style="width: 137px; height: 171px"
+										src="images/${requestScope.info.infoImg }" border="0">
+								</c:if>
 							</p>
-							<c:import url="/context/information_1.jsp"/>
+							<c:import url="/context/${requestScope.info.infoContext }" />
 						</div>
 					</div>
 					<div class="article-list-box">

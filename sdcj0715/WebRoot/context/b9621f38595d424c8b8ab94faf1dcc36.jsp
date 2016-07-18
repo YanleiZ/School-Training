@@ -9,7 +9,7 @@
 <html>
 <head>
 <base href="<%=basePath%>">
-</head> &nbsp;
+</head>
 <body>
 	<p class="MsoNormal"
 		style="line-height: 150%; text-indent: 24pt; margin: 0cm 0cm 0pt; tab-stops: 21.0pt 42.0pt 63.0pt 84.0pt 105.0pt 126.0pt 147.0pt 168.0pt 189.0pt 210.0pt 231.0pt 252.0pt 273.0pt 294.0pt 315.0pt 336.0pt 357.0pt 378.0pt 399.0pt 420.0pt 441.0pt 462.0pt; mso-char-indent-count: 2.0">

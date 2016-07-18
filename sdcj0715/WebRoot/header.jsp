@@ -58,7 +58,7 @@
 			</div>
 
 			<div class="client_search fl">
-				<a href="search.jsp" class="search_btn">搜索</a>
+				<a href="search.do" class="search_btn">搜索</a>
 			</div>
 		</div>
 	</div>

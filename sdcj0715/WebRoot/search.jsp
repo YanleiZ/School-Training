@@ -22,18 +22,21 @@
 <link rel="stylesheet" type="text/css" href="css/common.css">
 <link rel="stylesheet" type="text/css" href="css/index.css">
 <link rel="stylesheet" type="text/css" href="css/main.css">
-<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="js/jquery.enplaceholder.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery-1.11.3.min.js" type="text/javascript"
+	charset="utf-8"></script>
+<script src="js/jquery.enplaceholder.js" type="text/javascript"
+	charset="utf-8"></script>
 <script src="js/base.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript" src="js/sea.js"></script>
 <script type="text/javascript" src="js/base(1).js"></script>
 <script src="js/MD5.js" type="text/javascript" charset="utf-8"></script>
-<script src="js/jquery-validate-1.12.min.js" type="text/javascript" charset="utf-8"></script>
-<script src="js/validate-common.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/jquery-validate-1.12.min.js" type="text/javascript"
+	charset="utf-8"></script>
+<script src="js/validate-common.min.js" type="text/javascript"
+	charset="utf-8"></script>
 <script type="text/javascript" src="js/check_reg.js"></script>
 <script src="js/jquery.pagination.js" type="text/javascript"></script>
 <script type="text/javascript">
-
 	$(
 			function() {
 				//初始化时设置样式-项目领域
@@ -57,9 +60,13 @@
 				$("#industryUL li a").click(
 						function() {
 							var industryId = $(this).attr("value");
-							if ($("#industryUL li a[value='" + industryId + "']").size() > 0) {
+							if ($(
+									"#industryUL li a[value='" + industryId
+											+ "']").size() > 0) {
 								$("#industryUL li a").removeClass("active");
-								$("#industryUL li a[value='" + industryId + "']").addClass("active");
+								$(
+										"#industryUL li a[value='" + industryId
+												+ "']").addClass("active");
 								$("#industryId").val(industryId);
 								$("#searchform").submit();
 							}
@@ -68,9 +75,11 @@
 				$("#stageUL li a").click(
 						function() {
 							var industryId = $(this).attr("value");
-							if ($("#stageUL li a[value='" + industryId + "']").size() > 0) {
+							if ($("#stageUL li a[value='" + industryId + "']")
+									.size() > 0) {
 								$("#stageUL li a").removeClass("active");
-								$("#stageUL li a[value='" + industryId + "']").addClass("active");
+								$("#stageUL li a[value='" + industryId + "']")
+										.addClass("active");
 								$("#stageId").val(industryId);
 								$("#searchform").submit();
 							}
@@ -83,10 +92,10 @@
 
 <body>
 
-	
-<!--头部-->
-<c:import url="header.jsp"/>
-<!--end 头部-->
+
+	<!--头部-->
+	<c:import url="header.jsp" />
+	<!--end 头部-->
 	<div class="content">
 		<!--内容区-->
 		<div class="srh-wp-box">
@@ -99,50 +108,17 @@
 							<div class="sl-value">
 								<div class="sl-v-list">
 									<ul class="valueList" id="industryUL">
-										<input id="industryId" type="hidden" name="industryId" value="${empty param.industryId?-1:param.industryId}">
-										<li><a value="-1" title="不限" class="active" href="javascript:void(0);">不限</a></li>
+										<input id="industryId" type="hidden" name="industryId"
+											value="${empty param.industryId?-1:param.industryId}">
+										<li><a value="-1" title="不限" class="active"
+											href="javascript:void(0);">不限</a></li>
+										<c:forEach items="${requestScope.industryList }"
+											var="industry">
+											<li><a value="${industry.industryId }"
+												title="${industry.industryTitle }"
+												href="javascript:void(0);">${industry.industryTitle }</a></li>
+										</c:forEach>
 
-										<li><a value="1" title="电子商务" href="javascript:void(0);">电子商务</a></li>
-
-										<li><a value="2" title="社交网络" href="javascript:void(0);">社交网络</a></li>
-
-										<li><a value="3" title="智能硬件" href="javascript:void(0);">智能硬件</a></li>
-
-										<li><a value="4" title="媒体门户" href="javascript:void(0);">媒体门户</a></li>
-
-										<li><a value="5" title="工具软件" href="javascript:void(0);">工具软件</a></li>
-
-										<li><a value="6" title="消费生活" href="javascript:void(0);">消费生活</a></li>
-
-										<li><a value="7" title="金融" href="javascript:void(0);">金融</a></li>
-
-										<li><a value="8" title="医疗健康" href="javascript:void(0);">医疗健康</a></li>
-
-										<li><a value="9" title="企业服务" href="javascript:void(0);">企业服务</a></li>
-
-										<li><a value="10" title="旅游户外" href="javascript:void(0);">旅游户外</a></li>
-
-										<li><a value="11" title="房产家居" href="javascript:void(0);">房产家居</a></li>
-
-										<li><a value="12" title="数字娱乐" href="javascript:void(0);">数字娱乐</a></li>
-
-										<li><a value="13" title="教育" href="javascript:void(0);">教育</a></li>
-
-										<li><a value="14" title="汽车交通" href="javascript:void(0);">汽车交通</a></li>
-
-										<li><a value="15" title="物流" href="javascript:void(0);">物流</a></li>
-
-										<li><a value="16" title="农林牧渔" href="javascript:void(0);">农林牧渔</a></li>
-
-										<li><a value="17" title="节能环保" href="javascript:void(0);">节能环保</a></li>
-
-										<li><a value="18" title="军工" href="javascript:void(0);">军工</a></li>
-
-										<li><a value="19" title="先进制造/工业自动化"
-											href="javascript:void(0);">先进制造/工业自动化</a></li>
-
-										<li><a value="20" title="人力资源服务"
-											href="javascript:void(0);">人力资源服务</a></li>
 									</ul>
 								</div>
 							</div>
@@ -155,15 +131,14 @@
 							<div class="sl-value">
 								<div class="sl-v-list">
 									<ul class="valueList" id="stageUL">
-										<input type="hidden" name="stageId" id="stageId" value="${empty param.stageId?-1:param.stageId}">
-										<li><a value="-1" title="不限" class="active" href="javascript:void(0);">不限</a></li>
-										<li><a value="1" title="天使轮" href="javascript:void(0);">天使轮</a></li>
-										<li><a value="2" title="A轮" href="javascript:void(0);">A轮</a></li>
-										<li><a value="3" title="B轮" href="javascript:void(0);">B轮</a></li>
-										<li><a value="4" title="C轮" href="javascript:void(0);">C轮</a></li>
-										<li><a value="5" title="D轮" href="javascript:void(0);">D轮</a></li>
-										<li><a value="6" title="E轮及以后" href="javascript:void(0);">E轮及以后</a></li>
-										<li><a value="7" title="未融资" href="javascript:void(0);">未融资</a></li>
+										<input type="hidden" name="stageId" id="stageId"
+											value="${empty param.stageId?-1:param.stageId}">
+										<li><a value="-1" title="不限" class="active"
+											href="javascript:void(0);">不限</a></li>
+										<c:forEach items="${requestScope.stageList }" var="stage">
+											<li><a value="${stage.stageId }"
+												title="${stage.stageTitle }" href="javascript:void(0);">${stage.stageTitle }</a></li>
+										</c:forEach>
 									</ul>
 								</div>
 							</div>
@@ -173,14 +148,18 @@
 							<div class="sl-value">
 								<div class="sl-v-list">
 									<ul class="valueList" id="typeUL">
-										<input type="hidden" name="typeId" id="typeId" value="${empty param.typeId?-1:param.typeId}">
-										<li><a value="-1" title="不限" class="active" href="javascript:void(0);">不限</a></li>
+										<input type="hidden" name="typeId" id="typeId"
+											value="${empty param.typeId?-1:param.typeId}">
+										<li><a value="-1" title="不限" class="active"
+											href="javascript:void(0);">不限</a></li>
 										<li><a value="1" title="硬件" href="javascript:void(0);">硬件</a></li>
 										<li><a value="2" title="App" href="javascript:void(0);">App</a></li>
-										<li><a value="3" title="网站（含PC侧和移动侧）" href="javascript:void(0);">网站（含PC侧和移动侧）</a></li>
-										<li><a value="4" title="软件（特定的PC客户端）" href="javascript:void(0);">软件（特定的PC客户端）</a></li>
+										<li><a value="3" title="网站（含PC侧和移动侧）"
+											href="javascript:void(0);">网站（含PC侧和移动侧）</a></li>
+										<li><a value="4" title="软件（特定的PC客户端）"
+											href="javascript:void(0);">软件（特定的PC客户端）</a></li>
 										<li><a value="5" title="微信公众号" href="javascript:void(0);">微信公众号</a></li>
-										<li><a value="6" title="线下实体"	href="javascript:void(0);">线下实体</a></li>
+										<li><a value="6" title="线下实体" href="javascript:void(0);">线下实体</a></li>
 										<li><a value="99" title="其他" href="javascript:void(0);">其他</a></li>
 									</ul>
 								</div>
@@ -290,24 +269,26 @@
 						<li>
 							<div class="hd">
 								<p class="phot">
-									<img src="images/a43e4bfc883d41a2a8ebc271c87453e0.jpg" width="375" height="200">
+									<img src="images/a43e4bfc883d41a2a8ebc271c87453e0.jpg"
+										width="375" height="200">
 								</p>
 							</div>
 							<div class="bd">
 								<p class="name">
-									<a href="javascript:void(0);">绿源生物农药</a><i class="invest_ico_gray"></i>
+									<a href="javascript:void(0);">绿源生物农药</a><i
+										class="invest_ico_gray"></i>
 								</p>
 								<p class="tits">山东师范大学</p>
 								<p class="weal">
-									<a javascript:void(0);="" class="one">网站（含PC侧和移动侧）</a>
-									<a javascript:void(0);="" class="one">微信公众号</a> 
-									<a javascript:void(0);="" class="one">线下实体</a>
+									<a javascript:void(0);="" class="one">网站（含PC侧和移动侧）</a> <a
+										javascript:void(0);="" class="one">微信公众号</a> <a
+										javascript:void(0);="" class="one">线下实体</a>
 								</p>
 								<p class="link">
 									<a javascript:void(0);="">
-									绿源生物科技有限责任公司历时多年成功研发出绿源生物农药，并拥有成熟的生产技术。
-									本产品由生防黄绿木霉（Trichoderma+aureoviride）、棘孢木霉（Trichoderma+asperell
-									... </a>
+										绿源生物科技有限责任公司历时多年成功研发出绿源生物农药，并拥有成熟的生产技术。
+										本产品由生防黄绿木霉（Trichoderma+aureoviride）、棘孢木霉（Trichoderma+asperell
+										... </a>
 								</p>
 							</div>
 						</li>
@@ -315,21 +296,21 @@
 					</ul>
 				</div>
 				<div class="paging">
-				<div class="paging-box">
-					<ul>
-						<li><a title="上一页" href="javascript:void(0);">&lt;&lt;</a></li>
-						<li><a href="javascript:void(0);">1</a></li>
-						<li><a href="javascript:void(0);">2</a></li>
-						<li><a href="javascript:void(0);">3</a></li>
-						<li><a class="active" href="javascript:void(0);">4</a></li>
-						<li><a href="javascript:void(0);">5</a></li>
-						<li><a href="javascript:void(0);">6</a></li>
-						<li><a href="javascript:void(0);">7</a></li>
-						<li><a href="javascript:void(0);">8</a></li>
-						<li><a title="下一页" href="javascript:void(0);">&gt;&gt;</a></li>
-					</ul>
+					<div class="paging-box">
+						<ul>
+							<li><a title="上一页" href="javascript:void(0);">&lt;&lt;</a></li>
+							<li><a href="javascript:void(0);">1</a></li>
+							<li><a href="javascript:void(0);">2</a></li>
+							<li><a href="javascript:void(0);">3</a></li>
+							<li><a class="active" href="javascript:void(0);">4</a></li>
+							<li><a href="javascript:void(0);">5</a></li>
+							<li><a href="javascript:void(0);">6</a></li>
+							<li><a href="javascript:void(0);">7</a></li>
+							<li><a href="javascript:void(0);">8</a></li>
+							<li><a title="下一页" href="javascript:void(0);">&gt;&gt;</a></li>
+						</ul>
+					</div>
 				</div>
-			</div>
 				<!--end 分页-->
 
 			</div>
@@ -339,6 +320,6 @@
 	</div>
 
 	<!--底部-->
-	<c:import url="/footer.jsp"/>
+	<c:import url="/footer.jsp" />
 </body>
 </html>

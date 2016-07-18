@@ -208,7 +208,7 @@
 								</li>
 							</ul>
 							<div>
-								<a href="search.jsp" class="seemore_btn">加载更多</a>
+								<a href="search.do" class="seemore_btn">加载更多</a>
 							</div>
 						</div>
 
